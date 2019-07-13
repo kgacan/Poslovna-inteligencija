@@ -1,0 +1,457 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/10/2019 10:11:01 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KEMALPC"
+  DTS:CreatorName="KEMALPC\kemal"
+  DTS:DTSID="{029A1E73-2111-4161-9949-FEF4647FDA43}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4495.10"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="DimZaposlenik"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{6E6D3D36-C4E3-4EDB-9B89-0539B9DCC6E8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Punjenje DimZaposlenik"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6D9B831D-D510-4733-96FD-34CC1DFAF4E7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Punjenje DimZaposlenik"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Punjenje DimZaposlenik\DimZaposlenik"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimZaposlenik"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimZaposlenik]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Connections[OleDbConnection]"
+                  connectionManagerID="{CE10271B-6960-4449-A073-CE67214B4739}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.IGMDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].Columns[ImePrezime]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="ImePrezime"
+                      externalMetadataColumnId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[ImePrezime]"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[ImePrezime]" />
+                    <inputColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].Columns[RadniStaz]"
+                      cachedDataType="i4"
+                      cachedName="RadniStaz"
+                      externalMetadataColumnId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[RadniStaz]"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[RadniStaz]" />
+                    <inputColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].Columns[ZaposlenikID]"
+                      cachedDataType="i4"
+                      cachedName="ZaposlenikID"
+                      externalMetadataColumnId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[ZaposlenikAltKey]"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[ZaposlenikID]" />
+                    <inputColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].Columns[Naziv]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Naziv"
+                      externalMetadataColumnId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[VrstaPosla]"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[Naziv]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[ZaposlenikKey]"
+                      dataType="i4"
+                      name="ZaposlenikKey" />
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[ZaposlenikAltKey]"
+                      dataType="i4"
+                      name="ZaposlenikAltKey" />
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[ImePrezime]"
+                      dataType="wstr"
+                      length="50"
+                      name="ImePrezime" />
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[RadniStaz]"
+                      dataType="wstr"
+                      length="50"
+                      name="RadniStaz" />
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input].ExternalColumns[VrstaPosla]"
+                      dataType="wstr"
+                      length="50"
+                      name="VrstaPosla" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Punjenje DimZaposlenik\DimZaposlenik.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\DimZaposlenik.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Punjenje DimZaposlenik\DimZaposlenik.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Punjenje DimZaposlenik\IGM"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="IGM"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Z.ZaposlenikID, Z.Ime+' '+Z.Prezime AS 'ImePrezime', Z.RadniStaz,TZ.Naziv
+FROM dbo.Zaposlenik AS Z JOIN dbo.TipZaposlenika AS TZ
+	ON Z.TipZaposlenikaID=TZ.TipZaposlenikaID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Punjenje DimZaposlenik\IGM.Connections[OleDbConnection]"
+                  connectionManagerID="{FF5BB5BB-20E7-45EE-A83A-2B66471E3193}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.IGM]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[ZaposlenikID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].ExternalColumns[ZaposlenikID]"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[ZaposlenikID]"
+                      name="ZaposlenikID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[ImePrezime]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].ExternalColumns[ImePrezime]"
+                      length="101"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[ImePrezime]"
+                      name="ImePrezime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[RadniStaz]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].ExternalColumns[RadniStaz]"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[RadniStaz]"
+                      name="RadniStaz"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[Naziv]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].ExternalColumns[Naziv]"
+                      length="50"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].Columns[Naziv]"
+                      name="Naziv"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].ExternalColumns[ZaposlenikID]"
+                      dataType="i4"
+                      name="ZaposlenikID" />
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].ExternalColumns[ImePrezime]"
+                      dataType="wstr"
+                      length="101"
+                      name="ImePrezime" />
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].ExternalColumns[RadniStaz]"
+                      dataType="i4"
+                      name="RadniStaz" />
+                    <externalMetadataColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output].ExternalColumns[Naziv]"
+                      dataType="wstr"
+                      length="50"
+                      name="Naziv" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[ZaposlenikID]"
+                      dataType="i4"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[ZaposlenikID]"
+                      name="ZaposlenikID" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[ImePrezime]"
+                      dataType="wstr"
+                      length="101"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[ImePrezime]"
+                      name="ImePrezime" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[RadniStaz]"
+                      dataType="i4"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[RadniStaz]"
+                      name="RadniStaz" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[Naziv]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[Naziv]"
+                      name="Naziv" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Punjenje DimZaposlenik.Paths[OLE DB Source Output]"
+              endId="Package\Punjenje DimZaposlenik\DimZaposlenik.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Punjenje DimZaposlenik\IGM.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191.2,41.6"
+          Id="Package\Punjenje DimZaposlenik"
+          TopLeft="225.142860977017,92.3764718837804" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Punjenje DimZaposlenik">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Punjenje DimZaposlenik\IGM"
+          TopLeft="242.285718411815,38.5411770111137" />
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Punjenje DimZaposlenik\DimZaposlenik"
+          TopLeft="229.142861045137,159.058825760152" />
+        <EdgeLayout
+          Id="Package\Punjenje DimZaposlenik.Paths[OLE DB Source Output]"
+          TopLeft="291.085718411815,80.1411770111137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.2571426333213,78.9176487490381"
+              Start="0,0"
+              End="11.2571426333213,71.4176487490381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.458824374519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.458824374519"
+                    Point2="0,39.458824374519"
+                    Point3="4,39.458824374519" />
+                  <mssgle:LineSegment
+                    End="7.25714263332134,39.458824374519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.25714263332134,39.458824374519"
+                    Point2="11.2571426333213,39.458824374519"
+                    Point3="11.2571426333213,43.458824374519" />
+                  <mssgle:LineSegment
+                    End="11.2571426333213,71.4176487490381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Punjenje DimZaposlenik\IGM">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Punjenje DimZaposlenik\DimZaposlenik">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

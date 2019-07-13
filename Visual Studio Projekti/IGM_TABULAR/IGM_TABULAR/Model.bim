@@ -1,0 +1,656 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer localhost IGM",
+        "connectionString": "Provider=SQLNCLI11;Data Source=.;Initial Catalog=IGM;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "KEMALPC\\kemal",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Drzava",
+        "columns": [
+          {
+            "name": "DrzavaID",
+            "dataType": "int64",
+            "sourceColumn": "DrzavaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv",
+            "dataType": "string",
+            "sourceColumn": "Naziv",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Drzava",
+            "dataView": "full",
+            "source": {
+              "query": " \t\t\t\tSELECT [dbo].[Drzava].*   FROM [dbo].[Drzava] ",
+              "dataSource": "SqlServer localhost IGM"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Drzava].*   FROM [dbo].[Drzava] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Drzava"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Grad",
+        "columns": [
+          {
+            "name": "GradID",
+            "dataType": "int64",
+            "sourceColumn": "GradID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv",
+            "dataType": "string",
+            "sourceColumn": "Naziv",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DrzavaID",
+            "dataType": "int64",
+            "sourceColumn": "DrzavaID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Grad",
+            "dataView": "full",
+            "source": {
+              "query": " \t\t\t\tSELECT [dbo].[Grad].*   FROM [dbo].[Grad] ",
+              "dataSource": "SqlServer localhost IGM"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Grad].*   FROM [dbo].[Grad] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Grad"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Narudzba",
+        "columns": [
+          {
+            "name": "NarudzbaID",
+            "dataType": "int64",
+            "sourceColumn": "NarudzbaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Datum",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "Datum",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "Teret",
+            "dataType": "double",
+            "sourceColumn": "Teret",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "NacinPlacanja",
+            "dataType": "string",
+            "sourceColumn": "NacinPlacanja",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ZaposlenikID",
+            "dataType": "int64",
+            "sourceColumn": "ZaposlenikID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "KupacID",
+            "dataType": "int64",
+            "sourceColumn": "KupacID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Godina",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "YEAR([Datum])"
+          },
+          {
+            "type": "calculated",
+            "name": "Mjesec",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "MONTH([Datum])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Narudzba",
+            "dataView": "full",
+            "source": {
+              "query": " \t\t\t\tSELECT [dbo].[Narudzba].*   FROM [dbo].[Narudzba] ",
+              "dataSource": "SqlServer localhost IGM"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Broj kupovina",
+            "expression": "COUNT([NarudzbaID])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Narudzba].*   FROM [dbo].[Narudzba] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Narudzba"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "NarudzbaStavke",
+        "columns": [
+          {
+            "name": "Kolicina",
+            "dataType": "int64",
+            "sourceColumn": "Kolicina",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Cijena sa popustom",
+            "dataType": "double",
+            "sourceColumn": "Cijena",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Popust",
+            "dataType": "double",
+            "sourceColumn": "Popust",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ProizvodID",
+            "dataType": "int64",
+            "sourceColumn": "ProizvodID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "NarudzbaID",
+            "dataType": "int64",
+            "sourceColumn": "NarudzbaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Cijena jednog proizvoda",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "CALCULATE ( SUM ( Proizvod[Cijena] ), ALLEXCEPT ( Proizvod, Proizvod[Cijena] ) )"
+          },
+          {
+            "type": "calculated",
+            "name": "Cijena bez popusta",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "[Kolicina]*[Cijena jednog proizvoda]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "NarudzbaStavke",
+            "dataView": "full",
+            "source": {
+              "query": " \t\t\t\tSELECT [dbo].[NarudzbaStavke].*   FROM [dbo].[NarudzbaStavke] ",
+              "dataSource": "SqlServer localhost IGM"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Zarada sa popustom",
+            "expression": "SUM([Cijena sa popustom])"
+          },
+          {
+            "name": "Prosjecan popust",
+            "expression": "ROUND(AVERAGE([Popust]),2)",
+            "kpi": {
+              "targetExpression": "1",
+              "statusGraphic": "Traffic Light - Single",
+              "statusExpression": [
+                "var x='NarudzbaStavke'[Prosjecan popust] return",
+                "            if(ISBLANK(x),BLANK(),",
+                "                    If(x<0.14,-1,",
+                "\t                If(x<0.16,0,1)",
+                "                )",
+                "            )",
+                "            "
+              ],
+              "annotations": [
+                {
+                  "name": "GoalType",
+                  "value": "StaticValue"
+                },
+                {
+                  "name": "KpiStatusType",
+                  "value": "Linear"
+                },
+                {
+                  "name": "KpiThresholdType",
+                  "value": "Absolute"
+                },
+                {
+                  "name": "KpiThresholdOrdering",
+                  "value": "Ascending"
+                },
+                {
+                  "name": "KpiThresholdCount",
+                  "value": "2"
+                },
+                {
+                  "name": "KpiThreshold_0",
+                  "value": "0.14"
+                },
+                {
+                  "name": "KpiThreshold_1",
+                  "value": "0.16"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Zarada bez popusta",
+            "expression": "SUM([Cijena bez popusta])"
+          },
+          {
+            "name": "Ukupno prodatih proizvoda",
+            "expression": "SUM([Kolicina])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[NarudzbaStavke].*   FROM [dbo].[NarudzbaStavke] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "NarudzbaStavke"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Poslovnica",
+        "columns": [
+          {
+            "name": "PoslovnicaID",
+            "dataType": "int64",
+            "sourceColumn": "PoslovnicaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv",
+            "dataType": "string",
+            "sourceColumn": "Naziv",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Lokacija",
+            "dataType": "string",
+            "sourceColumn": "Lokacija",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GradID",
+            "dataType": "int64",
+            "sourceColumn": "GradID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Poslovnica",
+            "dataView": "full",
+            "source": {
+              "query": " \t\t\t\tSELECT [dbo].[Poslovnica].*   FROM [dbo].[Poslovnica] ",
+              "dataSource": "SqlServer localhost IGM"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Poslovnica].*   FROM [dbo].[Poslovnica] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Poslovnica"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PoslovnicaZaProdaju",
+        "columns": [
+          {
+            "name": "PoslovnicaZaProdajuID",
+            "dataType": "int64",
+            "sourceColumn": "PoslovnicaZaProdajuID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DatumPopusta",
+            "dataType": "dateTime",
+            "sourceColumn": "DatumPopusta",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Lokacija",
+            "dataType": "string",
+            "sourceColumn": "Lokacija",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PoslovnicaZaProdaju",
+            "dataView": "full",
+            "source": {
+              "query": " \t\t\t\tSELECT [dbo].[PoslovnicaZaProdaju].*   FROM [dbo].[PoslovnicaZaProdaju] ",
+              "dataSource": "SqlServer localhost IGM"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[PoslovnicaZaProdaju].*   FROM [dbo].[PoslovnicaZaProdaju] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PoslovnicaZaProdaju"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Proizvod",
+        "columns": [
+          {
+            "name": "ProizvodID",
+            "dataType": "int64",
+            "sourceColumn": "ProizvodID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv",
+            "dataType": "string",
+            "sourceColumn": "Naziv",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Cijena",
+            "dataType": "double",
+            "sourceColumn": "Cijena",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "JedMjere",
+            "dataType": "string",
+            "sourceColumn": "JedMjere",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Tezina",
+            "dataType": "double",
+            "sourceColumn": "Tezina",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "PoslovnicaZaProizvodnjuID",
+            "dataType": "int64",
+            "sourceColumn": "PoslovnicaZaProizvodnjuID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "KategorijaID",
+            "dataType": "int64",
+            "sourceColumn": "KategorijaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PoslovnicaZaProdajuID",
+            "dataType": "int64",
+            "sourceColumn": "PoslovnicaZaProdajuID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Proizvod",
+            "dataView": "full",
+            "source": {
+              "query": " \t\t\t\tSELECT [dbo].[Proizvod].*   FROM [dbo].[Proizvod] ",
+              "dataSource": "SqlServer localhost IGM"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Proizvod].*   FROM [dbo].[Proizvod] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Proizvod"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Zaposlenik",
+        "columns": [
+          {
+            "name": "ZaposlenikID",
+            "dataType": "int64",
+            "sourceColumn": "ZaposlenikID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Ime",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Ime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Prezime",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Prezime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "RadniStaz",
+            "dataType": "int64",
+            "sourceColumn": "RadniStaz",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PoslovnicaZaProdajuID",
+            "dataType": "int64",
+            "sourceColumn": "PoslovnicaZaProdajuID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TipZaposlenikaID",
+            "dataType": "int64",
+            "sourceColumn": "TipZaposlenikaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Ime i prezime",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "[Ime]&\" \"&[Prezime]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Zaposlenik",
+            "dataView": "full",
+            "source": {
+              "query": " \t\t\t\tSELECT [dbo].[Zaposlenik].*   FROM [dbo].[Zaposlenik] ",
+              "dataSource": "SqlServer localhost IGM"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Zaposlenik].*   FROM [dbo].[Zaposlenik] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Zaposlenik"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "cce40885-cda2-4bb7-b3e9-91bda5354f3f",
+        "fromTable": "Grad",
+        "fromColumn": "DrzavaID",
+        "toTable": "Drzava",
+        "toColumn": "DrzavaID"
+      },
+      {
+        "name": "6a5fecd9-f6ab-4a8f-9777-e535c250d034",
+        "fromTable": "Narudzba",
+        "fromColumn": "ZaposlenikID",
+        "toTable": "Zaposlenik",
+        "toColumn": "ZaposlenikID"
+      },
+      {
+        "name": "10a9cc76-5533-4af1-a972-e917f18de687",
+        "fromTable": "NarudzbaStavke",
+        "fromColumn": "NarudzbaID",
+        "toTable": "Narudzba",
+        "toColumn": "NarudzbaID"
+      },
+      {
+        "name": "b57ba3fa-5934-4730-a230-0900bea58565",
+        "fromTable": "NarudzbaStavke",
+        "fromColumn": "ProizvodID",
+        "toTable": "Proizvod",
+        "toColumn": "ProizvodID"
+      },
+      {
+        "name": "98735a93-475a-4d93-9970-b1248ee96315",
+        "fromTable": "Poslovnica",
+        "fromColumn": "GradID",
+        "toTable": "Grad",
+        "toColumn": "GradID"
+      },
+      {
+        "name": "31e7f8df-51d2-4f45-b84b-f5c4160fbfa5",
+        "fromTable": "PoslovnicaZaProdaju",
+        "fromColumn": "PoslovnicaZaProdajuID",
+        "toTable": "Poslovnica",
+        "toColumn": "PoslovnicaID"
+      },
+      {
+        "name": "545624b9-5982-468d-b4af-c4674705d485",
+        "fromTable": "Proizvod",
+        "fromColumn": "PoslovnicaZaProdajuID",
+        "toTable": "PoslovnicaZaProdaju",
+        "toColumn": "PoslovnicaZaProdajuID"
+      },
+      {
+        "name": "2cdb7e64-4e2f-4c19-80be-747e2f53ce08",
+        "fromTable": "Zaposlenik",
+        "fromColumn": "PoslovnicaZaProdajuID",
+        "toTable": "PoslovnicaZaProdaju",
+        "toColumn": "PoslovnicaZaProdajuID",
+        "isActive": false
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

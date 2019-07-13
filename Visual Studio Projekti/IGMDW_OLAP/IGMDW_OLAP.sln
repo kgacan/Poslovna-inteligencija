@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "IGMDW_OLAP", "IGMDW_OLAP\IGMDW_OLAP.dwproj", "{28B167D1-4FC4-419B-8594-A47EDF7AE83A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28B167D1-4FC4-419B-8594-A47EDF7AE83A}.Development|Default.ActiveCfg = Development
+		{28B167D1-4FC4-419B-8594-A47EDF7AE83A}.Development|Default.Build.0 = Development
+		{28B167D1-4FC4-419B-8594-A47EDF7AE83A}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,233 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b1f031c6-08e9-42f3-90f0-70261f3f1ea8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Zaposlenik</ID>
+  <Name>Dim Zaposlenik</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2764" scrolltop="-4160" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7535" y="10986" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimZaposlenik" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3387" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00003b0d00006b0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimZaposlenik" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2764</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4160</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="135">
+            <Shape Id="Zaposlenik Key" Expanded="false">
+              <Attributes>
+                <Attribute Id="Zaposlenik Key" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Ime Prezime" Expanded="false">
+              <Attributes>
+                <Attribute Id="Ime Prezime" />
+                <Attribute Id="Radni Staz" />
+              </Attributes>
+              <Position x="193" y="20" />
+            </Shape>
+            <Shape Id="Vrsta Posla" Expanded="false">
+              <Attributes>
+                <Attribute Id="Vrsta Posla" />
+              </Attributes>
+              <Position x="367" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="101ea186-a7fc-4d28-beec-f19abb526b15">
+    <DataSourceViewID>IGMDW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="06fe0b4f-f25e-4454-8c6f-b4d88901038a">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="2cfc178b-7ff2-4a15-af86-0c9f0f85aa63">
+      <ID>Zaposlenik Key</ID>
+      <Name>Zaposlenik Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1c2973b5-e0bb-49c0-a137-b32222c272c9">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a7d4b4b6-de11-4d13-9672-e8d516ac9905">
+            <TableID>dbo_DimZaposlenik</TableID>
+            <ColumnID>ZaposlenikKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="178b08bc-e8ba-425f-83eb-b2401ad62164">
+          <AttributeID>Ime Prezime</AttributeID>
+          <Name>Ime Prezime</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e950236a-6cb6-4496-a0e7-b1f0e309b6cd">
+      <ID>Ime Prezime</ID>
+      <Name>Ime Prezime</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="772b77ea-b713-4c6f-91d4-96f169f12f2c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="430cf102-28bc-4167-8cc2-b1bc6a8368d7">
+            <TableID>dbo_DimZaposlenik</TableID>
+            <ColumnID>ZaposlenikKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="43db1a60-58cd-4ec7-bb7f-ab3b38f32bbb">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="59d8b3b0-7f63-4f6f-b6b8-b0639a7b1d88">
+          <TableID>dbo_DimZaposlenik</TableID>
+          <ColumnID>ImePrezime</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="04825787-3ead-49e6-8879-9160a028d3d3">
+          <AttributeID>Radni Staz</AttributeID>
+          <Name>Radni Staz</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a17bf6b6-db73-49ac-9ac4-6ac5b7721a82">
+          <AttributeID>Vrsta Posla</AttributeID>
+          <Name>Vrsta Posla</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0dc7b91b-a195-42f1-8bce-565568337917">
+      <ID>Radni Staz</ID>
+      <Name>Radni Staz</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0ffff0f2-5ebb-4d5f-bbc0-ea863b626e03">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e209d2bc-eadf-4d88-87b8-1d47b5b7e1cd">
+            <TableID>dbo_DimZaposlenik</TableID>
+            <ColumnID>RadniStaz</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a62021a0-fc2c-4541-8204-fcafaf29f7ca">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="facc615d-63dd-46ff-9ec4-6c80f34443ef">
+          <TableID>dbo_DimZaposlenik</TableID>
+          <ColumnID>RadniStaz</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2e0a133d-44e3-401e-8f20-6f1b3c39c06d">
+      <ID>Vrsta Posla</ID>
+      <Name>Vrsta Posla</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cb0dd4e4-c035-41ca-88fc-0a4c848c34f7">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3ef3b623-b1c0-4c81-8537-e8dbfcb6da31">
+            <TableID>dbo_DimZaposlenik</TableID>
+            <ColumnID>VrstaPosla</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="b9e5db4e-6e8e-4141-b2b9-798568a52fb8">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b3e46bd8-e76c-4468-beb4-e07f37a04afa">
+          <TableID>dbo_DimZaposlenik</TableID>
+          <ColumnID>VrstaPosla</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="c2bd3884-dbc7-4713-aaab-c09b38f68899">
+      <ID>Hierarchy</ID>
+      <Name>ZaposlenikHierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="42f402d5-ead5-4b41-a6ed-7e0edfce3ed1">
+          <ID>Vrsta Posla</ID>
+          <Name>Vrsta Posla</Name>
+          <SourceAttributeID>Vrsta Posla</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="95ecaaf1-8ebf-41c5-ac87-1510edf9a3b7">
+          <ID>Ime Prezime</ID>
+          <Name>Ime Prezime</Name>
+          <SourceAttributeID>Ime Prezime</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
